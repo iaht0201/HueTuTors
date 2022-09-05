@@ -2,6 +2,7 @@ import React from "react";
 import FeatureItem from "./FeatureItem";
 import { TiTickOutline } from "react-icons/ti";
 import Iframe from "react-iframe";
+import { Button } from "@material-tailwind/react";
 
 export default function Feature() {
   const features = [
@@ -46,27 +47,37 @@ export default function Feature() {
     <div className="max-w-[1140px] w-full mx-auto ">
       <div className=" w-full text-center flex items-center">
         {" "}
-        <b className="block flex-1 h-[2px] bg-current"></b>
+        <b className="block flex-1 h-[1px] bg-current"></b>
         <h2 className="text-4xl my-6 font-bold text-[#2c70b9] mx-12">
           Tính năng nổi bật
         </h2>
-        <b className="block flex-1 h-[2px] bg-current"></b>
+        <b className="block flex-1 h-[1px] bg-current"></b>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-center flex-wrap gap-y-8 lg:justify-between lg:flex-nowrap">
         <Iframe
           url="http://www.youtube.com/embed/Yw9Ra2UiVLw"
-          width="530px"
+          width="480px"
           height="450px"
           id="myId"
-          className="myClassname"
+          className="myClassname m-w-[700px] w-full px-3 lg:max-w-[480px] lg:w-full"
           display="initial"
           position="relative"
         />
-        <ul className="max-w-[585px] w-full] grid grid-cols-258 gap-10">
-          {features.map((item, index) => {
-            return <FeatureItem key={index} value={item} />;
-          })}
-        </ul>
+
+        <div className="flex flex-col justify-center items-center">
+          <ul className="max-w-[585px] w-full] grid grid-cols-258 gap-x-7 gap-y-6 justify-center  ">
+            {features.map((item, index) => {
+              return <FeatureItem key={index} value={item} />;
+            })}
+          </ul>
+          <Button
+            variant="gradient"
+            size="sm"
+            className="hidden lg:block text-white bg-black mt-5 max-w-[180px] w-full"
+          >
+            <span>Đăng ký ngay</span>
+          </Button>
+        </div>
       </div>
     </div>
   );
