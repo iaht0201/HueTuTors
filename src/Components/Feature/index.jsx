@@ -3,8 +3,13 @@ import FeatureItem from "./FeatureItem";
 import { TiTickOutline } from "react-icons/ti";
 import Iframe from "react-iframe";
 import { Button } from "@material-tailwind/react";
+import lazyload from "vanilla-lazyload";
 
 export default function Feature() {
+  var lazyLoadInstance;
+  const ontMount = () => {
+    lazyLoadInstance = new lazyload();
+  };
   const features = [
     {
       icon: <TiTickOutline />,
@@ -55,13 +60,22 @@ export default function Feature() {
       </div>
       <div className="flex justify-center flex-wrap gap-y-8 lg:justify-between lg:flex-nowrap">
         <Iframe
-          url="http://www.youtube.com/embed/Yw9Ra2UiVLw"
+          data-src="http://www.youtube.com/embed/Yw9Ra2UiVLw"
+          src=""
           width="480px"
           height="450px"
           id="myId"
-          className="myClassname m-w-[700px] w-full px-3 lg:max-w-[480px] lg:w-full"
+          className="myClassname m-w-[700px] w-full px-3 lg:max-w-[480px] lg:w-full relative"
           display="initial"
           position="relative"
+     
+        />
+        <iframe
+          class="lazy player-ratio myClassname m-w-[700px] w-full px-3 lg:max-w-[480px] lg:w-full"
+          src=""
+          data-src="http://www.youtube.com/embed/Yw9Ra2UiVLw"
+          frameborder="0"
+          title="Vimeo player"
         />
 
         <div className="flex flex-col justify-center items-center">
