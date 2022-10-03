@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 import { CgFacebook } from "react-icons/cg";
 import { GoClock, GoSearch } from "react-icons/go";
 import { BsFillTelephoneFill } from "react-icons/bs";
-import Logo from "../assets/images/logo.png";
+import Logo from "../assets/images/logo2.png";
 import NavbarItem from "./Header/NavbarItem";
 
 import { IoIosArrowDown } from "react-icons/io";
-import { FaBars } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";  
 import {
   Navbar,
   MobileNav,
@@ -230,7 +230,7 @@ export default function Header1() {
             <img
               src={Logo}
               alt="logo"
-              className="h-[40px] w-[80px] object-cover px-[15px]"
+              className="w-[100px] object-cover px-[15px]"
             />
           </Typography>
 
