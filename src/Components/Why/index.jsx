@@ -1,13 +1,12 @@
 import React from "react";
+import Title_Feature from "../Title_Feature";
 
 export default function WhyHueTuTor() {
   const whyTutor = [{}];
   return (
     <>
-      <h1 className="font-bold text-3xl text-center my-6">
-        Tại sao lại lựa chọn HueTutors{" "}
-      </h1>
       <div className="max-w-[1140px] w-full 5 mx-auto">
+        <Title_Feature title="Tại sao lại lựa chọn HueTutors" />
         <div className="flex flex-wrap px-3 lg:flex-nowrap gap-4 justify-center">
           <span className="block max-w-[530px] w-full leading-10 tracking-wider text-lg">
             {" "}

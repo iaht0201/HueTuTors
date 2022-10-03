@@ -4,6 +4,7 @@ import { TiTickOutline } from "react-icons/ti";
 import Iframe from "react-iframe";
 import { Button } from "@material-tailwind/react";
 import lazyload from "vanilla-lazyload";
+import Title_Feature from "../Title_Feature";
 
 export default function Feature() {
   var lazyLoadInstance;
@@ -50,14 +51,15 @@ export default function Feature() {
   ];
   return (
     <div className="max-w-[1140px] w-full mx-auto ">
-      <div className=" w-full text-center flex items-center">
+      {/* <div className=" w-full text-center flex items-center">
         {" "}
         <b className="block flex-1 h-[1px] bg-current"></b>
         <h2 className="text-4xl my-6 font-bold text-[#2c70b9] mx-12">
           Tính năng nổi bật
         </h2>
         <b className="block flex-1 h-[1px] bg-current"></b>
-      </div>
+      </div> */}
+      <Title_Feature title="Tính năng nổi bật" />
       <div className="flex justify-center flex-wrap gap-y-8 lg:justify-between lg:flex-nowrap">
         <Iframe
           src=""

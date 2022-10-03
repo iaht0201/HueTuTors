@@ -1,10 +1,10 @@
 import "./App.css";
-import Header from "./Components/Header";
-import Hero from "./Components/Hero";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import ServiceTutor from "./pages/dich-vu-cua-chung-toi";
 import Category from "./pages/category";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 function App() {
   return (
     <BrowserRouter>

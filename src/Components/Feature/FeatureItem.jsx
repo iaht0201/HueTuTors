@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function FeatureItem({ value, key }) {
+export default function FeatureItem({ value }) {
   return (
     <>
-      <li key={key} className="max-w-[258px] ">
+      <li className="max-w-[258px] ">
         <div className="flex gap-3 text-xl font-semibold mb-2">
           <div
             className="flex items-center relative justify-center         
@@ -15,7 +15,7 @@ export default function FeatureItem({ value, key }) {
             "
             before=""
           >
-            <span className="z-10">  {value.icon}</span>
+            <span className="z-10"> {value.icon}</span>
           </div>
           <h2 className="uppercase">{value.name}</h2>
         </div>
