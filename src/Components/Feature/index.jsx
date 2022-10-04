@@ -5,7 +5,6 @@ import Iframe from "react-iframe";
 import { Button } from "@material-tailwind/react";
 import lazyload from "vanilla-lazyload";
 import Title_Feature from "../Title_Feature";
-
 export default function Feature() {
   var lazyLoadInstance;
   const ontMount = () => {
@@ -61,14 +60,20 @@ export default function Feature() {
       </div> */}
       <Title_Feature title="Tính năng nổi bật" />
       <div className="flex justify-center flex-wrap gap-y-8 lg:justify-between lg:flex-nowrap">
+        <div style={{ display: "flex", justifyContent: "center" }}>
+          {/* <YouTubeEmbed
+            url="https://www.youtube.com/watch?v=HpVOs5imUN0"
+            width={325}
+            height={220}
+          /> */}
+        </div>
         <Iframe
-          src=""
-          url="http://www.youtube.com/embed/Yw9Ra2UiVLw"
+          url="https://www.youtube.com/embed/wf0chPFLtiQ"
           width="480px"
-          height="450px"
-          id="myId"
-          className="myClassname m-w-[700px] w-full px-3 lg:max-w-[480px] lg:w-full relative"
-          display="initial"
+          height="300px"
+          id=""
+          className=""
+          display="block"
           position="relative"
         />
         {/* <iframe

@@ -219,7 +219,7 @@ export default function Header1() {
           </div>
         </div>
       </div>
-      <Navbar className="mx-auto max-w-screen-[1440px] py-2 px-4 lg:px-8 lg:py-4">
+      <Navbar className="mx-auto max-w-screen-[1440px] py-0 px-4 lg:px-8 lg:py-1">
         <div className="container mx-auto flex items-center justify-between text-blue-gray-900">
           <Typography
             as="a"
@@ -230,7 +230,7 @@ export default function Header1() {
             <img
               src={Logo}
               alt="logo"
-              className="w-[100px] object-cover px-[15px]"
+              className="lg:w-[100px] object-cover px-[15px] w-[80px]"
             />
           </Typography>
 
@@ -254,7 +254,7 @@ export default function Header1() {
 
           <IconButton
             variant="text"
-            className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden text-black"
+            className="flex items-center ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden text-black"
             ripple={false}
             onClick={() => setOpenNav(!openNav)}
           >
