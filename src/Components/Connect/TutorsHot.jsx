@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Title_Feature from "../Title_Feature";
 import { Button } from "@material-tailwind/react";
 import { TutorContext } from "../../tutorsContext";
-
+import Top1 from "../../assets/images/vuongmien.png";
 import Pagination from "../Pagination";
 export default function TutorsHot() {
   const { tutors, getTutors, imageconvert, hotTutors, sorted } =
@@ -21,7 +21,7 @@ export default function TutorsHot() {
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
-  console.log(hotTutors);
+  console.log(currentTutors);
   const TutorItem = (props) => {
     const { image, title, address, subjects, price, description, path, rank } =
       props;
@@ -67,13 +67,24 @@ export default function TutorsHot() {
               </div>
             </div>
           </div>
-          <div
-            className={`rounded-[50px] bg-zinc-500 h-8 w-8 flex justify-center items-center ${
-              rank == 0 ? "bg-red-400" : rank == 1 ? "bg-green-400" : ""
-            }`}
-          >
-            {rank + 1}
-          </div>
+          {rank == 1 ? (
+            <div className="flex flex-col items-center relative">
+              <img src={Top1} alt="" className="w-[60px]" />
+              <div
+                className={`rounded-[50px] bg-zinc-500 h-8 w-8 flex justify-center items-center bg-[#fcd34d] `}
+              >
+                <span>{rank}</span>
+              </div>
+            </div>
+          ) : (
+            <div
+              className={`rounded-[50px] bg-zinc-500 h-8 w-8 flex justify-center items-center ${
+                rank == 2 ? "bg-red-400" : rank == 3 ? "bg-green-400" : ""
+              }`}
+            >
+              {rank}
+            </div>
+          )}
         </div>
       </div>
     );
@@ -95,7 +106,7 @@ export default function TutorsHot() {
                 price={item.tutors[0].price}
                 description={item.tutors[0].description}
                 path={"a"}
-                rank={index}
+                rank={index + 3 * (currentPage - 1) + 1}
               />
             );
           })}

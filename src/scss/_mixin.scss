@@ -1,0 +1,13 @@
+@mixin color-blue {
+    background: -webkit-linear-gradient(0deg, #021A84, #021A84),
+        linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+}
+
+@mixin color-custom($color1, $color2) {
+    background: $color1, $color2;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

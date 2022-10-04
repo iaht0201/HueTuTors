@@ -48,7 +48,8 @@ export default function TutorsContextProvider({ children }) {
           .forEach((key) => {
             sorted.push(data[key]);
           });
-        setHotTutors(sorted);
+          // 20 top 
+        setHotTutors(sorted.slice(0, 20));
       }
     } catch (error) {
       alert(error.error_description || error.message);

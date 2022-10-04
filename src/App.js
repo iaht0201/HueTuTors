@@ -1,4 +1,5 @@
 import "./App.css";
+import "./scss/app.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home";
 import ServiceTutor from "./pages/dich-vu-cua-chung-toi";

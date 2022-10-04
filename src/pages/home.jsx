@@ -1,6 +1,7 @@
 import React from "react";
 import Connect from "../Components/Connect";
 import Feature from "../Components/Feature";
+import Guide from "../Components/Guide";
 
 import Header1 from "../Components/Header1";
 import Hero from "../Components/Hero";
@@ -11,9 +12,12 @@ export default function Home() {
     <>
       <Header1 />
       <Hero />
+     
       <Feature />
-      <WhyHueTuTor />
+      {/* <WhyHueTuTor /> */}
+     
       <Connect/>
+      <Guide/>
     </>
   );
 }

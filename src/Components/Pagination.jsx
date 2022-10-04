@@ -19,7 +19,10 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
           {" "}
           <Button
             disabled={numberPage == 1}
-            onClick={() => paginate(numberPage - 1)}
+            onClick={() => {
+              paginate(numberPage - 1);
+              setNumberPage(numberPage - 1);
+            }}
             className={`page-link cursor-pointer text-black p-3  ${
               numberPage == 1 && "bg-gray-100"
             }`}
@@ -45,7 +48,10 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
           {" "}
           <Button
             disabled={numberPage == pageNumbers.length}
-            onClick={() => paginate(numberPage + 1)}
+            onClick={() => {
+              paginate(numberPage + 1);
+              setNumberPage(numberPage + 1);
+            }}
             className={`page-link cursor-pointer text-black p-3  ${
               numberPage == pageNumbers.length && "bg-gray-100"
             }`}

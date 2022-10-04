@@ -1,0 +1,88 @@
+@import "../../scss/mixin" ;
+.infor {
+    margin-bottom: 80px;
+
+    &-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    &-title {
+        @include color-blue;
+
+        font-weight: 700;
+        font-size: 34px;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
+    &-lists {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        text-align: center;
+        gap: 15px 32px;
+      
+    }
+
+    &-item {
+        max-width: 365.33px;
+        height: 278px;
+        padding: 32px;
+        border-radius: 16px;
+
+        img {
+            margin-bottom: 16px;
+        }
+
+        &:nth-child(1) {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), #2ADA66;
+
+            .infor-item-title,
+            .infor-item-text {
+                @include color-custom(linear-gradient(0deg, #2ADA66, #2ADA66),
+                    linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)));
+            }
+        }
+
+        &:nth-child(2) {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), #021A84;
+
+            .infor-item-title,
+            .infor-item-text {
+                @include color-custom(linear-gradient(0deg, #021A84, #021A84),
+                    linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)));
+            }
+        }
+
+        &:last-child {
+            background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), #E5532A;
+
+            .infor-item-title,
+            .infor-item-text {
+                @include color-custom(rgba(229, 83, 42, 1), null);
+            }
+        }
+
+        &-title {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 8px;
+
+        }
+
+        &-text {
+            font-weight: 400;
+            font-size: 14px;
+            height: calc(20/14);
+        }
+    }
+}
+@media screen and (max-width: 910px) {
+    .infor-lists  {
+        flex-wrap: wrap;
+    }
+}
