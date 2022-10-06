@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Title_Feature from "../Title_Feature";
 import { Button } from "@material-tailwind/react";
-import { TutorContext } from "../../tutorsContext";
+import { TutorContext } from "../../context/tutorsContext";
 import Top1 from "../../assets/images/vuongmien.png";
 import Pagination from "../Pagination";
 export default function TutorsHot() {
@@ -23,68 +23,76 @@ export default function TutorsHot() {
 
   console.log(currentTutors);
   const TutorItem = (props) => {
-    const { image, title, address, subjects, price, description, path, rank } =
+    const { image, name, address, subjects, price, description, path, rank } =
       props;
 
     return (
       <div
         className=" cursor-pointer px-1 py-3 sm:px-4 border border-[1px] 
-      border-solid mx-1 my-4 rounded-[10px] hover:shadow-lg hover:shadow-gray-500/50 hover:delay-150"
+      border-solid  my-4 rounded-[10px] hover:shadow-lg hover:shadow-gray-500/50 hover:delay-150 max-w-[850px] mx-auto"
       >
         <div className="flex flex-row justify-between">
-          <div className=" flex flex-row  gap-8 ">
-            <div className="w-[280px]  ">
-              <img src={image} alt="" />
+          <div className=" flex flex-row  lg:gap-8 gap-4">
+            <div className="w-[250px] ">
+              <img
+                src={image}
+                alt=""
+                className="w-full object-cover object-center h-[250px]"
+              />
             </div>
-            <div className="flex flex-col justify-between py-4 ">
-              <div>
-                <h2 className="font-bold text-lg">{title}</h2>
+            <div className="flex flex-col justify-between py-4 gap-4 ">
+              <div className="flex flex-col gap-2 sm:max-w-[320px] lg:max-w-[600px]">
+                <h2 className="font-bold text-lg text-[20px]">{name}</h2>
                 <h3>
-                  Môn giảng dạy:{" "}
+                  <span className="font-semibold"> Môn giảng dạy: </span>
                   {subjects.map((item, index) => (
                     <span key={index}> {item} , </span>
                   ))}
                 </h3>
                 <h3>
-                  Địa chỉ giảng dạy: <span>{address}</span>
+                  <span className="font-semibold"> Địa chỉ giảng dạy: </span>
+                  <span>{address}</span>
                 </h3>
                 <h3>
-                  Giá : <span>{price} vnđ/tháng</span>
+                  <span className="font-semibold"> Giá : </span>{" "}
+                  <span>{price} vnđ/tháng</span>
                 </h3>
-                <h3>{description}</h3>
+                <h3 className="italic text-gray-600">{description}</h3>
               </div>
               <div>
                 {" "}
-                <Button className="text-black p-3 cursor-pointer">
+                <Button className="text-black p-3 cursor-pointer lg:text-[16px] text-[13px] ">
                   Xem chi tiết
                 </Button>
-                <Button className="text-black p-3 cursor-pointer">
+                <Button className="text-black p-3 cursor-pointer lg:text-[16px] text-[13px]">
                   Mời dạy
                 </Button>
-                <Button className="text-black p-3 cursor-pointer">
+                <Button className="text-black p-3 cursor-pointer lg:text-[16px] text-[13px]">
                   Liên hệ
                 </Button>
               </div>
             </div>
           </div>
-          {rank == 1 ? (
-            <div className="flex flex-col items-center relative">
-              <img src={Top1} alt="" className="w-[60px]" />
-              <div
-                className={`rounded-[50px] bg-zinc-500 h-8 w-8 flex justify-center items-center bg-[#fcd34d] `}
-              >
-                <span>{rank}</span>
-              </div>
-            </div>
-          ) : (
+          <div className={`flex flex-col items-center relative `}>
+            <img
+              src={Top1}
+              alt=""
+              className={`w-[55px] ${rank == 1 ? "block" : "hidden"}`}
+            />
             <div
               className={`rounded-[50px] bg-zinc-500 h-8 w-8 flex justify-center items-center ${
-                rank == 2 ? "bg-red-400" : rank == 3 ? "bg-green-400" : ""
+                rank == 1
+                  ? "bg-[#fcd34d]"
+                  : rank == 2
+                  ? "bg-red-400"
+                  : rank == 3
+                  ? "bg-green-400"
+                  : ""
               }`}
             >
-              {rank}
+              <span>{rank}</span>
             </div>
-          )}
+          </div>
         </div>
       </div>
     );
@@ -100,7 +108,7 @@ export default function TutorsHot() {
             return (
               <TutorItem
                 image={imageconvert(item.tutors[0].image)}
-                title={`${item.firstName} ${item.lastname}`}
+                name={`${item.firstName} ${item.lastname}`}
                 address={item.address}
                 subjects={item.tutors[0].subject}
                 price={item.tutors[0].price}
@@ -114,6 +122,7 @@ export default function TutorsHot() {
             postsPerPage={tutorsPerPage}
             totalPosts={hotTutors.length}
             paginate={paginate}
+            currentPage={currentPage}
           />
         </div>
       </div>

@@ -5,7 +5,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@material-tailwind/react";
-import TutorsContextProvider from "./tutorsContext";
+import TutorsContextProvider from "./context/tutorsContext";
+import SerViceContextProvider from "./context/serviceContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

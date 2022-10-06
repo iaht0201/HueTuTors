@@ -1,7 +1,7 @@
 import { Button } from "@material-tailwind/react";
 import React, { useState } from "react";
 
-const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
+const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = [];
 
   for (let i = 1; i <= Math.ceil(totalPosts / postsPerPage); i++) {
@@ -38,7 +38,9 @@ const Pagination = ({ postsPerPage, totalPosts, paginate }) => {
                 setNumberPage(number);
                 handleClick();
               }}
-              className={`page-link cursor-pointer text-black p-3  `}
+              className={`page-link cursor-pointer text-black p-3 ${
+                currentPage == number ? "text-red" : ""
+              } `}
             >
               {number}
             </Button>

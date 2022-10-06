@@ -13,11 +13,12 @@ export default function Home() {
       <Header1 />
       <Hero />
      
-      <Feature />
+      <div className="mt-[40px] mb-[70px] ">
+      <Guide />
+      </div>
+      <Connect />
+      {/* <Feature /> */}
       {/* <WhyHueTuTor /> */}
-     
-      <Connect/>
-      <Guide/>
     </>
   );
 }

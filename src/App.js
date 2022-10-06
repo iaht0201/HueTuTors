@@ -11,7 +11,9 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
-        <Route path="dich-vu-cua-chung-toi" element={<ServiceTutor />} />
+        <Route path="dich-vu/:id" element={<ServiceTutor />} />
+
+        {/* <Route path="dich-vu-cua-chung-toi/:id" element={<ServiceTutor />} /> */}
         <Route path="contact" element={<Category />} />
       </Routes>
     </BrowserRouter>

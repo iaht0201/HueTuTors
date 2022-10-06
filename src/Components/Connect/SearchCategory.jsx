@@ -7,7 +7,7 @@ import {
 } from "react-icons/md";
 import Title_Feature from "../Title_Feature";
 import { useContext } from "react";
-import { TutorContext } from "../../tutorsContext";
+import { TutorContext } from "../../context/tutorsContext";
 export default function SearchCategory() {
   const { loading, searchCategory, getSearchCategory } =
     useContext(TutorContext);
@@ -69,7 +69,7 @@ export default function SearchCategory() {
       <div
         className="px-1 pb-3 sm:px-4 text-center border border-[1px] border-solid mx-1 my-4 rounded-[10px] shadow-lg shadow-gray-500/50"
       >
-        <Link to={props.path}>
+        <Link to={`/dich-vu/${props.path}`}>
           <img
             src={props.image}
             alt=""

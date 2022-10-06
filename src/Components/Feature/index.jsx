@@ -49,40 +49,16 @@ export default function Feature() {
     },
   ];
   return (
-    <div className="max-w-[1140px] w-full mx-auto ">
-      {/* <div className=" w-full text-center flex items-center">
-        {" "}
-        <b className="block flex-1 h-[1px] bg-current"></b>
-        <h2 className="text-4xl my-6 font-bold text-[#2c70b9] mx-12">
-          Tính năng nổi bật
-        </h2>
-        <b className="block flex-1 h-[1px] bg-current"></b>
-      </div> */}
+    <div className="max-w-[1140px] w-full mx-auto py-5">
       <Title_Feature title="Tính năng nổi bật" />
-      <div className="flex justify-center flex-wrap gap-y-8 lg:justify-between lg:flex-nowrap">
-        <div style={{ display: "flex", justifyContent: "center" }}>
-          {/* <YouTubeEmbed
-            url="https://www.youtube.com/watch?v=HpVOs5imUN0"
-            width={325}
-            height={220}
-          /> */}
-        </div>
+      <div className="flex justify-center flex-wrap gap-y-8 lg:justify-between lg:flex-nowrap container">
         <Iframe
           url="https://www.youtube.com/embed/wf0chPFLtiQ"
-          width="480px"
-          height="300px"
           id=""
-          className=""
+          className="max-w-[480px] max-h-[300px] lg:w-[480px]"
           display="block"
           position="relative"
         />
-        {/* <iframe
-          class="lazy player-ratio myClassname m-w-[700px] w-full px-3 lg:max-w-[480px] lg:w-full"
-          src="http://www.youtube.com/embed/Yw9Ra2UiVLw"
-          data-src="http://www.youtube.com/embed/Yw9Ra2UiVLw"
-          frameborder="0"
-          title="Vimeo player"
-        /> */}
 
         <div className="flex flex-col justify-center items-center">
           <ul className="max-w-[585px] w-full] grid grid-cols-258 gap-x-7 gap-y-6 justify-center  ">

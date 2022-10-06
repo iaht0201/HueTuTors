@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { supabase } from "./supabaseClient";
+import { supabase } from "../supabaseClient";
 // Thiết lập trạng thái cho ứng dụng
 export const TutorContext = createContext();
 export default function TutorsContextProvider({ children }) {

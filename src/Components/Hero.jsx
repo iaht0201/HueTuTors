@@ -75,7 +75,7 @@ export default function Hero() {
               src={item.image}
               alt=""
               key={index}
-              className=" w-full object-cover object-right-top z-0 lg:h-[85vh] h-[200px] "
+              className=" w-full object-cover object-right-top z-0 lg:h-[85vh] sm:h-[70vh] h-[200px] "
             />
           );
         })}
