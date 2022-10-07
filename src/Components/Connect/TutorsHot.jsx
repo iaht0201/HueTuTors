@@ -33,16 +33,21 @@ export default function TutorsHot() {
       >
         <div className="flex flex-row justify-between">
           <div className=" flex flex-row  lg:gap-8 gap-4">
-            <div className="w-[250px] ">
-              <img
-                src={image}
-                alt=""
-                className="w-full object-cover object-center h-[250px]"
-              />
-            </div>
+            <Link to={`/gia-su/${path}`}>
+              <div className="w-[250px] ">
+                <img
+                  src={image}
+                  alt=""
+                  className="w-full object-cover object-center h-[250px]"
+                />
+              </div>
+            </Link>
             <div className="flex flex-col justify-between py-4 gap-4 ">
-              <div className="flex flex-col gap-2 sm:max-w-[320px] lg:max-w-[600px]">
-                <h2 className="font-bold text-lg text-[20px]">{name}</h2>
+              <div className="flex flex-col gap-2 sm:max-w-[300px] lg:max-w-[500px]">
+                <Link to={`/gia-su/${path}`}>
+                  <h2 className="font-bold text-lg text-[20px]">{name}</h2>
+                </Link>
+
                 <h3>
                   <span className="font-semibold"> Môn giảng dạy: </span>
                   {subjects.map((item, index) => (
@@ -61,9 +66,11 @@ export default function TutorsHot() {
               </div>
               <div>
                 {" "}
-                <Button className="text-black p-3 cursor-pointer lg:text-[16px] text-[13px] ">
-                  Xem chi tiết
-                </Button>
+                {/* <Link to={`/gia-su/${path}`}>
+                  <Button className="text-black p-3 cursor-pointer lg:text-[16px] text-[13px] ">
+                    Xem chi tiết
+                  </Button>
+                </Link> */}
                 <Button className="text-black p-3 cursor-pointer lg:text-[16px] text-[13px]">
                   Mời dạy
                 </Button>
@@ -113,7 +120,7 @@ export default function TutorsHot() {
                 subjects={item.tutors[0].subject}
                 price={item.tutors[0].price}
                 description={item.tutors[0].description}
-                path={"a"}
+                path={item.userId}
                 rank={index + 3 * (currentPage - 1) + 1}
               />
             );

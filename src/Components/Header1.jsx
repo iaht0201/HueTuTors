@@ -8,7 +8,7 @@ import Logo from "../assets/images/logo2.png";
 import NavbarItem from "./Header/NavbarItem";
 
 import { IoIosArrowDown } from "react-icons/io";
-import { FaBars } from "react-icons/fa";  
+import { FaBars } from "react-icons/fa";
 import {
   Navbar,
   MobileNav,
@@ -290,7 +290,7 @@ export default function Header1() {
             )}
           </IconButton>
         </div>
-        <MobileNav open={openNav}>
+        <MobileNav open={openNav} className={`${openNav ? "block" : "hidden"}`}>
           {navList}
           <Link to="/">
             <span className="text-black block mb-4"> Đăng Nhập</span>

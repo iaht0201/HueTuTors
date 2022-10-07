@@ -6,13 +6,14 @@ import ServiceTutor from "./pages/dich-vu-cua-chung-toi";
 import Category from "./pages/category";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import TutorsDetail from "./pages/gia-su";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route index element={<Home />} />
         <Route path="dich-vu/:id" element={<ServiceTutor />} />
-
+        <Route path="gia-su/:userId" element={<TutorsDetail />} />
         {/* <Route path="dich-vu-cua-chung-toi/:id" element={<ServiceTutor />} /> */}
         <Route path="contact" element={<Category />} />
       </Routes>
