@@ -5,6 +5,7 @@ import { Button } from "@material-tailwind/react";
 import { TutorContext } from "../../context/tutorsContext";
 import Top1 from "../../assets/images/vuongmien.png";
 import Pagination from "../Pagination";
+import { Image } from "antd";
 export default function TutorsHot() {
   const { tutors, getTutors, imageconvert, hotTutors, sorted } =
     useContext(TutorContext);
@@ -132,7 +133,9 @@ export default function TutorsHot() {
             currentPage={currentPage}
           />
         </div>
+     
       </div>
+     
     </>
   );
 }

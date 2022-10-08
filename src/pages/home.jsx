@@ -12,9 +12,9 @@ export default function Home() {
     <>
       <Header1 />
       <Hero />
-     
+
       <div className="mt-[40px] mb-[70px] ">
-      <Guide />
+        <Guide />
       </div>
       <Connect />
       {/* <Feature /> */}
