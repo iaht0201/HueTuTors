@@ -35,25 +35,25 @@ export default function TutorDetail() {
               className="object-cover rounded-full border border-[4px] border-white border-solid mr-3 "
               src="https://cdn.pixabay.com/photo/2022/09/13/17/02/leaves-7452420_960_720.jpg"
             ></Image>
-            <div className="flex  w-[80%] px-[10px] md:justify-between md:flex-row flex-col gap-4 items-center">
+            <div className="flex md:w-[80%]  w-full px-[10px] md:justify-between md:flex-row flex-col gap-4 items-center">
               <div>
-                <h2 className="text-[25px] font-bold mb-0">Đoàn Quang Thái</h2>
-                <div className="flex gap-4 font-semibold">
+                <h2 className="text-[28px] font-bold mb-0 text-center">Đoàn Quang Thái</h2>
+                <div className="flex gap-4 font-semibold text-[15px]">
                   <div className="">Lượt thích : 10</div>
                   <div>Lượt đánh giá : 20</div>
                 </div>
-                <div className="md:text-start text-center font-semibold">
+                <div className="md:text-start text-center font-semibold text-[15px]">
                   {" "}
                   Môn dạy : Toán , Văn
                 </div>
               </div>
               <div className="flex items-center">
-                <Button className="bg-orange-400 px-5 rounded-[15px] text-[10px] md:text-[15px] flex gap-2 items-center">
-                  <RiMailSendLine className="md:text-[18px] text-[14px] " /> Mời
+                <Button className="bg-orange-400 px-5 rounded-[8px] text-[15px] flex gap-2 items-center">
+                  <RiMailSendLine className="text-[20px]  " /> Mời
                   dạy
                 </Button>
-                <Button className="bg-blue-600 px-5 rounded-[15px] text-[10px] md:text-[15px] ml-4 flex gap-2 items-center">
-                  <AiOutlineLike className="md:text-[18px] text-[14px] " />
+                <Button className="bg-blue-600 px-5 rounded-[8px] text-[15px] ml-4 flex gap-2 items-center">
+                  <AiOutlineLike className="text-[20px]  " />
                   Yêu thích
                 </Button>
               </div>
