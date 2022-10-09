@@ -14,7 +14,7 @@ export default function TutorsDetail() {
     <TutorsDetailContextProvider>
       <div className="bg-gray-100 pb-24 h-[100vh]">
         <Header1 />
-        <TutorDetail />
+        <TutorDetail userId={userId} />
       </div>
     </TutorsDetailContextProvider>
   );
