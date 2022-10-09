@@ -11,7 +11,7 @@ export default function ServiceTutor() {
   return (
     <SerViceContextProvider>
       <Header1 />
-      <div> {id}</div>
+     
     </SerViceContextProvider>
   );
 }

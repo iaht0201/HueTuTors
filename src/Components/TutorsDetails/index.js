@@ -1,12 +1,13 @@
 import { Avatar, Image } from "antd";
 import { Button } from "@material-tailwind/react";
 import { AiOutlineLike } from "react-icons/ai";
+import { RiMailSendLine } from "react-icons/ri";
 import React from "react";
 import "./tutorsDetails.scss";
 import "antd/dist/antd.css";
 export default function TutorDetail() {
   return (
-    <div className="max-w-[1140px] mx-auto bg-white h-full ">
+    <div className="max-w-[1140px] mx-auto bg-white h-[120%] ">
       <div className=" relative ">
         <div className="h-[200px] h-full">
           <Image
@@ -15,7 +16,7 @@ export default function TutorDetail() {
             className="w-full top-[-16px] object-cover max-h-[200px] absolute rounded-b-2xl"
             src="https://cdn.pixabay.com/photo/2022/09/13/17/02/leaves-7452420_960_720.jpg"
           ></Image>
-          <div className="absolute left-[10%] bottom-[-45%] flex items-end w-[80%]">
+          <div className="absolute md:left-[10%] md:bottom-[-45%] bottom-[-115%] flex md:items-end md:w-[80%] w-full flex-col items-center md:flex-row">
             {/* <Avatar
               size={140}
               src="https://cdn.pixabay.com/photo/2022/09/13/17/02/leaves-7452420_960_720.jpg"
@@ -34,28 +35,34 @@ export default function TutorDetail() {
               className="object-cover rounded-full border border-[4px] border-white border-solid mr-3 "
               src="https://cdn.pixabay.com/photo/2022/09/13/17/02/leaves-7452420_960_720.jpg"
             ></Image>
-            <div className="flex justify-between w-[80%]">
+            <div className="flex  w-[80%] px-[10px] md:justify-between md:flex-row flex-col gap-4 items-center">
               <div>
                 <h2 className="text-[25px] font-bold mb-0">Đoàn Quang Thái</h2>
-                <div className="flex gap-4">
-                  <div>Lượt thích : 10</div>
+                <div className="flex gap-4 font-semibold">
+                  <div className="">Lượt thích : 10</div>
                   <div>Lượt đánh giá : 20</div>
                 </div>
-                <div> Môn dạy : Toán , Văn</div>
+                <div className="md:text-start text-center font-semibold">
+                  {" "}
+                  Môn dạy : Toán , Văn
+                </div>
               </div>
               <div className="flex items-center">
-                <Button className="bg-orange-400 px-5 rounded-[15px] text-[15px]">
-                  Mời dạy
+                <Button className="bg-orange-400 px-5 rounded-[15px] text-[10px] md:text-[15px] flex gap-2 items-center">
+                  <RiMailSendLine className="md:text-[18px] text-[14px] " /> Mời
+                  dạy
                 </Button>
-                <Button className="bg-blue-600 px-5 rounded-[15px] text-[15px] ml-4">
-                  <AiOutlineLike className="text-[18px]" />
+                <Button className="bg-blue-600 px-5 rounded-[15px] text-[10px] md:text-[15px] ml-4 flex gap-2 items-center">
+                  <AiOutlineLike className="md:text-[18px] text-[14px] " />
+                  Yêu thích
                 </Button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-[100px]">fdfdsfdsf</div>
+      <div className="md:mt-[100px] mt-[247px]">fdfdsfdsf</div>
     </div>
   );
 }
+// 147 83
