@@ -30,7 +30,7 @@ export default function TutorsHot() {
     return (
       <div
         className=" cursor-pointer px-1 py-3 sm:px-4 border border-[1px] 
-      border-solid  my-4 rounded-[10px] hover:shadow-lg hover:shadow-gray-500/50 hover:delay-150 max-w-[850px] mx-auto"
+    border-solid  my-4 rounded-[10px] hover:shadow-lg hover:shadow-gray-500/50 hover:delay-150 max-w-[850px] mx-auto"
       >
         <div className="flex flex-row justify-between">
           <div className=" flex flex-row  lg:gap-8 gap-4">
@@ -68,10 +68,10 @@ export default function TutorsHot() {
               <div>
                 {" "}
                 {/* <Link to={`/gia-su/${path}`}>
-                  <Button className="text-black p-3 cursor-pointer lg:text-[16px] text-[13px] ">
-                    Xem chi tiết
-                  </Button>
-                </Link> */}
+                <Button className="text-black p-3 cursor-pointer lg:text-[16px] text-[13px] ">
+                  Xem chi tiết
+                </Button>
+              </Link> */}
                 <Button className="text-black p-3 cursor-pointer lg:text-[16px] text-[13px]">
                   Mời dạy
                 </Button>
@@ -133,9 +133,7 @@ export default function TutorsHot() {
             currentPage={currentPage}
           />
         </div>
-     
       </div>
-     
     </>
   );
 }
