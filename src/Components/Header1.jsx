@@ -236,13 +236,15 @@ export default function Header1() {
 
           <div className="hidden lg:block">{navList}</div>
           <div>
-            <Button
-              variant="gradient"
-              size="sm"
-              className="hidden lg:inline-block text-black"
-            >
-              <span>Đăng nhập</span>
-            </Button>
+            <Link to="/login">
+              <Button
+                variant="gradient"
+                size="sm"
+                className="hidden lg:inline-block text-black"
+              >
+                <span>Đăng nhập</span>
+              </Button>
+            </Link>
             <Button
               variant="gradient"
               size="sm"
@@ -292,7 +294,7 @@ export default function Header1() {
         </div>
         <MobileNav open={openNav} className={`${openNav ? "block" : "hidden"}`}>
           {navList}
-          <Link to="/">
+          <Link to="/login">
             <span className="text-black block mb-4"> Đăng Nhập</span>
           </Link>
           <Link to="/">

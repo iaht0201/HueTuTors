@@ -6,17 +6,18 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@material-tailwind/react";
 import TutorsContextProvider from "./context/tutorsContext";
-import 'antd/dist/antd.css';
+import "antd/dist/antd.css";
 import SerViceContextProvider from "./context/serviceContext";
+import { AuthenticatorContext } from "./context/authenticatorContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <TutorsContextProvider>
+    <AuthenticatorContext>
       <ThemeProvider>
         <App />
       </ThemeProvider>
-    </TutorsContextProvider>
+    </AuthenticatorContext>
   </React.StrictMode>
 );
 
