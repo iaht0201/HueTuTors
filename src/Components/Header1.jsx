@@ -29,9 +29,9 @@ export default function Header1() {
     logOutAccount();
   };
   useEffect(() => {
-    if (supabase.auth.user() != null) {
-      navigate("/");
-    }
+    // if (supabase.auth.user() != null) {
+    //   navigate("/");
+    // }
   }, []);
 
   const navbar = [
