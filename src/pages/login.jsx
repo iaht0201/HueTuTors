@@ -1,24 +1,26 @@
 import { Button, message, Steps } from "antd";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import BgLogin from "../assets/images/LoginSVG.svg";
-const { Step } = Steps;
-const steps = [
-  {
-    title: "First",
-    content: "First-content",
-  },
-  {
-    title: "Second",
-    content: "Second-content",
-  },
-  {
-    title: "Last",
-    content: "Last-content",
-  },
-];
+import { AuthenticatorContext } from "../context/authenticatorContext";
+import { supabase } from "../supabaseClient";
 
 const Login = () => {
+  const { logInAccount, loading } = useContext(AuthenticatorContext);
+  const [email, setEmail] = useState("");
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    logInAccount(email);
+  };
+  useEffect(() => {
+    console.log(loading);
+    if (supabase.auth.user() != null) {
+      navigate("/");
+    }
+  }, []);
   return (
     <>
       <div className="h-screen">
@@ -28,9 +30,10 @@ const Login = () => {
               <img src={BgLogin} className="w-full" alt="Phone image" />
             </div>
             <div className="md:w-8/12 lg:w-5/12 lg:ml-20">
-              <form>
+              <form onSubmit={handleSubmit}>
                 <div className="mb-6">
                   <input
+                    onChange={(e) => setEmail(e.target.value)}
                     type="text"
                     className="form-control block w-full px-4 py-2 text-xl font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                     placeholder="Email address"
@@ -74,7 +77,7 @@ const Login = () => {
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="light"
                 >
-                  Sign in
+                  {loading ? "Loading..." : "Đăng nhập"}
                 </button>
 
                 <div className="flex items-center my-4 before:flex-1 before:border-t before:border-gray-300 before:mt-0.5 after:flex-1 after:border-t after:border-gray-300 after:mt-0.5">
@@ -119,6 +122,15 @@ const Login = () => {
                   </svg>
                   Continue with Twitter
                 </Link>
+                <p class="text-sm font-semibold mt-2 pt-1 mb-0">
+                  Don't have an account?
+                  <Link
+                    to="/signup"
+                    class="text-red-600 hover:text-red-700 focus:text-red-700 transition duration-200 ease-in-out"
+                  >
+                    Register
+                  </Link>
+                </p>
               </form>
             </div>
           </div>

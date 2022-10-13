@@ -10,17 +10,15 @@ import TutorsContextProvider from "../context/tutorsContext";
 
 export default function Home() {
   return (
-    <>
-      <TutorsContextProvider>
-        <Header1 />
-        <Hero />
-        <div className="mt-[40px] mb-[70px] ">
-          <Guide />
-        </div>
-        <Connect />
-        {/* <Feature /> */}
-        {/* <WhyHueTuTor /> */}{" "}
-      </TutorsContextProvider>
-    </>
+    <TutorsContextProvider>
+      <Header1 />
+      <Hero />
+      <div className="mt-[40px] mb-[70px] ">
+        <Guide />
+      </div>
+      <Connect />
+      {/* <Feature /> */}
+      {/* <WhyHueTuTor /> */}{" "}
+    </TutorsContextProvider>
   );
 }

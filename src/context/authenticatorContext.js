@@ -1,5 +1,7 @@
 import React, { createContext, useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 import { supabase } from "../supabaseClient";
+import "react-toastify/dist/ReactToastify.css";
 export const AuthenticatorContext = createContext();
 export default function AuthenticatorContextProvider({ children }) {
   const [loading, setLoading] = useState(false);
@@ -11,7 +13,21 @@ export default function AuthenticatorContextProvider({ children }) {
     try {
       const { error } = await supabase.auth.signIn({ email });
       if (error) throw error;
-      alert("Check your email for your magic login link!");
+      else {
+        toast("Vui lòng kiểm tra email!");
+      }
+    } catch (error) {
+      toast(`${error.error_description || error.message}`);
+    } finally {
+      setLoading(false);
+    }
+  };
+  const logOutAccount = async () => {
+    setLoading(true);
+    try {
+      const { error } = await supabase.auth.signOut();
+      if (error) throw error;
+      toast("Đã đăng xuất");
     } catch (error) {
       alert(error.error_description || error.message);
     } finally {
@@ -23,9 +39,12 @@ export default function AuthenticatorContextProvider({ children }) {
       value={{
         loading,
         imageconvert,
+        logInAccount,
+        logOutAccount
       }}
     >
       {children}
+      <ToastContainer />
     </AuthenticatorContext.Provider>
   );
 }

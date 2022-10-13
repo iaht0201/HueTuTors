@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CgFacebook } from "react-icons/cg";
 import { GoClock, GoSearch } from "react-icons/go";
 import { BsFillTelephoneFill } from "react-icons/bs";
@@ -16,9 +16,24 @@ import {
   Button,
   IconButton,
 } from "@material-tailwind/react";
+import { useContext } from "react";
+import { AuthenticatorContext } from "../context/authenticatorContext";
+import { supabase } from "../supabaseClient";
 export default function Header1() {
+  const { logOutAccount, loading } = useContext(AuthenticatorContext);
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [openNav, setOpenNav] = useState(false);
+  const user = supabase.auth.user();
+  const navigate = useNavigate();
+  const handleSignout = () => {
+    logOutAccount();
+  };
+  useEffect(() => {
+    if (supabase.auth.user() != null) {
+      navigate("/");
+    }
+  }, []);
+
   const navbar = [
     {
       name: "Dịch vụ",
@@ -235,24 +250,39 @@ export default function Header1() {
           </Typography>
 
           <div className="hidden lg:block">{navList}</div>
-          <div>
-            <Link to="/login">
+          {!user ? (
+            <>
+              <Link to="/login">
+                <Button
+                  variant="gradient"
+                  size="sm"
+                  className="hidden lg:inline-block text-black"
+                >
+                  <span>Đăng nhập</span>
+                </Button>
+              </Link>
+              <Link to="/login">
+                <Button
+                  variant="gradient"
+                  size="sm"
+                  className="hidden lg:inline-block text-black"
+                >
+                  <span>Đăng ký</span>
+                </Button>
+              </Link>
+            </>
+          ) : (
+            <>
               <Button
                 variant="gradient"
                 size="sm"
                 className="hidden lg:inline-block text-black"
+                onClick={handleSignout}
               >
-                <span>Đăng nhập</span>
+                <span>Đăng xuất</span>
               </Button>
-            </Link>
-            <Button
-              variant="gradient"
-              size="sm"
-              className="hidden lg:inline-block text-black"
-            >
-              <span>Đăng ký</span>
-            </Button>
-          </div>
+            </>
+          )}
 
           <IconButton
             variant="text"

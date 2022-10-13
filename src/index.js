@@ -5,19 +5,23 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@material-tailwind/react";
-import TutorsContextProvider from "./context/tutorsContext";
+
 import "antd/dist/antd.css";
-import SerViceContextProvider from "./context/serviceContext";
-import { AuthenticatorContext } from "./context/authenticatorContext";
+
+import AuthenticatorContextProvider, {
+  AuthenticatorContext,
+} from "./context/authenticatorContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <AuthenticatorContext>
+    {/* <AuthenticatorContext> */}
+    <AuthenticatorContextProvider>
       <ThemeProvider>
         <App />
       </ThemeProvider>
-    </AuthenticatorContext>
+    </AuthenticatorContextProvider>
+    {/* </AuthenticatorContext> */}
   </React.StrictMode>
 );
 
